@@ -17,5 +17,16 @@ namespace Snake
                 line.Add(p);
             }
         }
+
+        public override void DrawLine()
+        {
+            Console.ForegroundColor = ConsoleColor.Red;
+            //foreach(Point p in line)
+            //{
+            //    p.Draw();
+            //}
+            base.DrawLine();
+            Console.ForegroundColor = ConsoleColor.White;
+        }
     }
 }

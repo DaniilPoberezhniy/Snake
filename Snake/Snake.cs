@@ -65,7 +65,7 @@ namespace Snake
             Point head = GetNextPoint();
             if (head.IsHit(food))
             {
-                //head.Draw();
+                head.Draw();
                 food.symb = head.symb;
                 line.Add(food);
                 return true;

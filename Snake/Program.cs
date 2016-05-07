@@ -11,6 +11,28 @@ namespace Snake
     {
         static void Main(string[] args)
         {
+            VerticalLine vl = new VerticalLine(5, 6, 16, '^');
+            Draw(vl);
+
+            Point p = new Point(7, 6, '*');
+            Figure fSnake = new Snake(p, 5, Direction.RIGHT);
+            Draw(fSnake);
+            //Snake snake = (Snake)fSnake;
+
+            HorisontalLine hl = new HorisontalLine(4, 15, 7, ')');
+
+            List<Figure> figures = new List<Figure>();
+            figures.Add(vl);
+            figures.Add(hl);
+            figures.Add(fSnake);
+            
+            foreach(var f in figures)
+            {
+                f.DrawLine();
+            } 
+
+
+            Console.ReadLine();
             Console.SetBufferSize(82, 27);
             
             //Отрисовка рамочки.
@@ -53,11 +75,13 @@ namespace Snake
                 }
                 //Thread.Sleep(100);
                 //snake.Move();
-            }
+            }      
+            //Console.ReadLine();
+        }
 
-           
-
-            Console.ReadLine();
+        static void Draw(Figure figure)
+        {
+            figure.DrawLine();
         }
 
         
